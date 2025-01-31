@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"github.com/FreitasGabriel/red-fox-challenge/internal/service"
+	"github.com/FreitasGabriel/red-fox-challenge/internal/core/service"
 	"github.com/gin-gonic/gin"
 )
 

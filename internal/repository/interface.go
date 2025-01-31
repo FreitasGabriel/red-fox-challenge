@@ -1,15 +1,17 @@
 package repository
 
-import "database/sql"
+import (
+	"gorm.io/gorm"
+)
 
-func NewPokemonRepository(repo sql.DB) PokemonRepository {
+func NewPokemonRepository(repo *gorm.DB) PokemonRepository {
 	return &pokemonRepository{
 		repository: repo,
 	}
 }
 
 type pokemonRepository struct {
-	repository sql.DB
+	repository *gorm.DB
 }
 
 type PokemonRepository interface {
