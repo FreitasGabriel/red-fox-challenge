@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"github.com/FreitasGabriel/red-fox-challenge/internal/core/domain"
 	"gorm.io/gorm"
 )
 
@@ -15,5 +16,6 @@ type pokemonRepository struct {
 }
 
 type PokemonRepository interface {
-	GetPokemonByID(id string) string
+	GetPokemonByID(id string) (*domain.Pokemon, error)
+	InsertPokemonInBatch(pokemon []*domain.Pokemon, batchSize int) error
 }

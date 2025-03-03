@@ -1,11 +1,12 @@
-CREATE TABLE pokemon (
-  "id" INT PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+CREATE TABLE pokemons (
+  "id" SERIAL PRIMARY KEY UNIQUE NOT NULL,
   "name" VARCHAR(100) NOT NULL,
   "pokedex_number" INT NOT NULL,
   "img_name" VARCHAR(255),
   "generation" INT,
   "evolution_stage" VARCHAR(100),
   "evolved" INT,
+  "family_id" INT,
   "cross_gen" INT,
   "type_one" VARCHAR(100),
   "type_two" VARCHAR(100),
