@@ -11,4 +11,5 @@ func InitRoutes(cr *gin.RouterGroup, handler handlers.PokemonHandler) {
 	})
 
 	cr.GET("/pokemon/:id", handler.GetPokemonByID)
+	cr.POST(("/pokemon"), handler.CreatePokemonInBatch)
 }
