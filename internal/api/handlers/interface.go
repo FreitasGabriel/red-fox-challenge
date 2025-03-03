@@ -17,4 +17,5 @@ type pokemonHandler struct {
 
 type PokemonHandler interface {
 	GetPokemonByID(c *gin.Context)
+	CreatePokemonInBatch(c *gin.Context)
 }
