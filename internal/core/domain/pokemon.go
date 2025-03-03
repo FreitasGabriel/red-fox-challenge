@@ -1,9 +1,6 @@
 package domain
 
-import "github.com/google/uuid"
-
 type Pokemon struct {
-	ID             string `json:"id"`
 	Name           string `json:"name"`
 	PokedexNumber  int    `json:"pokedex_number"`
 	ImgName        string `json:"img_name"`
@@ -21,7 +18,7 @@ type Pokemon struct {
 	DEF            int    `json:"def"`
 	STA            int    `json:"sta"`
 	Legendary      int    `json:"legendary"`
-	Aqueireable    int    `json:"aquireable"`
+	Aquireable     int    `json:"aquireable"`
 	Spawns         int    `json:"spawns"`
 	Regional       int    `json:"regional"`
 	Raidable       int    `json:"raidable"`
@@ -33,10 +30,37 @@ type Pokemon struct {
 	FutureEvolve   int    `json:"future_evolve"`
 }
 
-func NewPokemon(name string) *Pokemon {
-	pokeUUID, _ := uuid.NewUUID()
+func NewPokemon(name, img_name, evolution_stage, type_one, type_two, weather_one, weather_two string,
+	pokedex_number, generation, evolved, family_id, cross_gen, stat_total, atk, def, sta, legendary, aquireable,
+	spawns, regional, raidable, hatchable, shiny, nest, new, not_gettable, future_evolve int) *Pokemon {
+
 	return &Pokemon{
-		ID:   pokeUUID.String(),
-		Name: name,
+		Name:           name,
+		PokedexNumber:  pokedex_number,
+		ImgName:        img_name,
+		Generation:     generation,
+		EvolutionStage: evolution_stage,
+		Evolved:        evolved,
+		FamilyID:       family_id,
+		CrossGen:       cross_gen,
+		TypeOne:        type_one,
+		TypeTwo:        type_two,
+		WeatherOne:     weather_one,
+		WeatherTwo:     weather_two,
+		StatTotal:      stat_total,
+		ATK:            atk,
+		DEF:            def,
+		STA:            sta,
+		Legendary:      legendary,
+		Aquireable:     aquireable,
+		Spawns:         spawns,
+		Regional:       regional,
+		Raidable:       raidable,
+		Hatchable:      hatchable,
+		Shiny:          shiny,
+		Nest:           nest,
+		New:            new,
+		NotGettable:    not_gettable,
+		FutureEvolve:   future_evolve,
 	}
 }
